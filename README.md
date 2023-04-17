@@ -1,3 +1,5 @@
+## DERSTE YAPTIKLARIMIZ
+
 [ ] mkdir ile yeni folder yarattık
 [ ] cd ile içine girdik
 [ ] npm package initialize ettik. npm init -y
