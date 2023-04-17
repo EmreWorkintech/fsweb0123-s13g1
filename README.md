@@ -23,3 +23,8 @@
 
 [ ] postman'ı ve http status code'ları öğrendik.
 [ ] portman ile post ve put testi yaptık.
+
+
+
+## SUNUM DOSYASI
+[sunum] (https://docs.google.com/presentation/d/1a_UQ72H0lU0hCIVcugZBiHlSR3bGX7Eairk34udqCDs/edit?usp=sharing)
