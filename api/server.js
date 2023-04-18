@@ -1,33 +1,35 @@
-//IMPORTS
+//1- IMPORTS
 const express = require('express');
-const Hobbit = require('./hobbits/hobbits-model');
+const hobbitsRouter = require('./hobbits/hobbits-router');
+const derstekiPratikler = require('./pratikler/pratikler');
 
-//instance of express
+
+//2- instance of express
 const server = express();
 
-//GLOBAL MIDDLEWARE
+//3- GLOBAL MIDDLEWARE
 server.use(express.json());
 
-//ENDPOINTS: CRUD -> create, read, update, delete
-server.get('/hobbits', (req,res)=>{
-    const hobbits = Hobbit.getAll();
-    res.status(200).json(hobbits);
-})
+//4- ENDPOINTS: CRUD -> create(POST), read(GET), update(PUT), delete(DEL)
+server.get('/', (req,res)=>{   //catch all
+    res.status(200).send('API up and running');
+} )
 
-server.post('/hobbit', (req,res)=>{
-    const payload = req.body;
-    if(payload.name && payload.name.trim() && payload.name.trim().length > 3) {
-        const newHobbit = Hobbit.create(req.body);
-        res.status(201).json(newHobbit);
-    } else {
-        res.status(400).json({message: 'name bilgisi eksik veya 3 karakterden az!...'});
-    }
-    
-})
 
-server.put('/hobbit/:id', (req,res)=>{
-    const updatedHobbit = Hobbit.update(req.body, req.params.id);
-    res.status(201).json(updatedHobbit);
+//Hobbits
+server.use('/api/hobbits', hobbitsRouter);
+server.use('/api/races', hobbitsRouter);
+server.use('/api/background', hobbitsRouter);
+
+
+
+
+//DERSTE YAPTIĞIMIZ PRATİKLER
+server.use(derstekiPratikler);
+
+
+server.use('*', (req,res)=>{   //catch all
+    res.status(404).json({message: `Requested url not found`});
 })
 
 
