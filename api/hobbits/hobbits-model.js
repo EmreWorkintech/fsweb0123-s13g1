@@ -23,6 +23,11 @@ function getAll() {
     return hobbits;
 }
 
+async function getById(id) {
+    const hobbit = hobbits.find(hobbit => hobbit.id == id);
+    return hobbit;
+}
+
 
 function create(payload) {
     const newHobbit = {
@@ -62,5 +67,6 @@ module.exports = {
     update,
     remove,
     getAll,
-    search
+    search,
+    getById
 }
