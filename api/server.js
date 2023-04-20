@@ -36,7 +36,7 @@ server.use('*', (req,res)=>{
 })
 
 //ERROR HANDLER MIDDLEWARE
-server.use((error,req,res,next)=>{
+server.use((error,req,res,next)=>{ //eslint-disable-line
     res.status(error.status || 500).json({message: error.message || 'Server error!..'})
 })
 
