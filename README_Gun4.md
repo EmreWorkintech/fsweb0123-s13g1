@@ -37,4 +37,9 @@
     - `heroku login` komutu ile login olduk.
     - uygulamamızın loglarını açtık. `heroku logs --app=UYGULAMA_ADI --tail`
 
+- [ ] BONUS: heroku'ya heroku git ile deploy'u da öğrendik.
+    - heroku.com'da uygulamamızın `Deploy` bölümünde `Deployment method` olarak `Heroku Git`'i seçtik.
+    - kendi bilgisayarımızda, komut satırımızda (proje klasöründe iken) `heroku git:remote -a UYGULAMA_ADI` yazdık.
+    - `git add .` ve `git commit -m "MESAJIMIZ"` sonrası `git push heroku main` ile komut satırından heroku git'e güncellemelerimizi pushladık. (Not: Github'ı da güncellemek için ayrıca `git push origin main` yapmamız gerekiyor.) 
+
         
